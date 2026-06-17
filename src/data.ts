@@ -143,7 +143,7 @@ export const siteData = {
       },
       {
         category: "Инфраструктура",
-        level: "Настройка и поддержка",
+        level: "DevOps",
         skills: [
           { name: "Docker", level: 90 },
           { name: "CI/CD", level: 85 },
