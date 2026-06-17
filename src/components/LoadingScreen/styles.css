@@ -1,0 +1,236 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+.logo-masterpiece {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+}
+
+.logo-core {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-symbol {
+    font-size: 5rem;
+    font-weight: 300;
+    color: transparent;
+    background: linear-gradient(135deg, #68A063 0%, #68A063 50%, #7CB873 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -3px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-glow {
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    top: -40%;
+    left: -40%;
+    background:
+        radial-gradient(circle at 30% 30%, #68A063 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, #7CB873 0%, transparent 50%);
+    opacity: 0.15;
+    filter: blur(40px);
+    z-index: 1;
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-pulse {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent, rgba(104, 160, 99, 0.1), transparent);
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.6s ease;
+}
+
+.logo-masterpiece:hover .logo-core {
+    animation: to-square 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.logo-masterpiece:hover .logo-symbol {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #7CB873 0%, #68A063 50%, #68A063 100%);
+}
+
+.logo-masterpiece:hover .logo-glow {
+    opacity: 0.25;
+    transform: rotate(180deg) scale(1.1);
+    border-radius: 20%;
+}
+
+.logo-masterpiece:hover .logo-pulse {
+    opacity: 1;
+    animation: pulse-rotate 3s linear infinite;
+    border-radius: 25%;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 300px;
+    max-width: 80vw;
+}
+
+.status-text {
+    color: #7CB873;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+    min-height: 24px;
+    transition: all 0.3s ease;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 3px;
+    background: rgba(104, 160, 99, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #68A063, #7CB873);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 20px rgba(104, 160, 99, 0.3);
+}
+
+.progress-percentage {
+    color: #68A063;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.skip-hint {
+    color: rgba(104, 160, 99, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.skip-hint:hover {
+    opacity: 1;
+    color: #7CB873;
+}
+
+.typography {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+    transition: all 0.6s ease;
+}
+
+@keyframes to-square {
+    0% {
+        border-radius: 50%;
+    }
+
+    50% {
+        border-radius: 35%;
+        transform: scale(0.95);
+    }
+
+    100% {
+        border-radius: 20%;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.3;
+        border-radius: 25%;
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+        opacity: 0.1;
+        border-radius: 30%;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 0.3;
+        border-radius: 25%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 30px;
+    }
+
+    .logo-masterpiece {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logo-symbol {
+        font-size: 3rem;
+    }
+
+    .loading-content {
+        width: 250px;
+    }
+
+    .status-text {
+        font-size: 0.7rem;
+    }
+
+    .progress-percentage {
+        font-size: 0.65rem;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+}
