@@ -50,13 +50,12 @@ export default function Skills() {
             const gradient = "from-[#68A063] to-[#7CB873]"
             const isLearning = category.category === "Изучаю"
             return (
-              <div 
-                key={index} 
-                className={`group relative bg-black/80 rounded-2xl p-6 border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(104,160,99,0.05)] ${
-                  isLearning 
-                    ? 'border-[#68A063]/30 hover:border-[#68A063]/60' 
-                    : 'border-[#68A063]/10 hover:border-[#68A063]/30'
-                }`}
+              <div
+                key={index}
+                className={`group relative bg-black/80 rounded-2xl p-6 border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(104,160,99,0.05)] ${isLearning
+                  ? 'border-[#68A063]/30 hover:border-[#68A063]/60'
+                  : 'border-[#68A063]/10 hover:border-[#68A063]/30'
+                  }`}
               >
                 <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden opacity-20">
                   <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#68A063] group-hover:border-[#7CB873] transition-colors duration-300"></div>
@@ -98,9 +97,9 @@ export default function Skills() {
                           </span>
                         </div>
                         <div className="w-full bg-gray-900/80 rounded-full h-2 overflow-hidden border border-[#68A063]/5">
-                          <div 
+                          <div
                             className={`h-2 rounded-full transition-all duration-1000 ease-out`}
-                            style={{ 
+                            style={{
                               width: `${skill.level}%`,
                               background: `linear-gradient(90deg, #68A063, #7CB873)`,
                               boxShadow: `0 0 20px rgba(104,160,99,0.2)`
@@ -118,29 +117,34 @@ export default function Skills() {
           })}
         </div>
 
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="group p-5 bg-black/60 rounded-xl border border-[#68A063]/10 hover:border-[#68A063]/30 transition-all duration-300 hover:bg-black/80 hover:shadow-[0_0_30px_rgba(104,160,99,0.05)]">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <a
+            href={skills.stats.title1Link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-6 sm:p-8 md:p-10 bg-black/60 rounded-xl border border-[#68A063]/10 hover:border-[#68A063]/30 transition-all duration-300 hover:bg-black/80 hover:shadow-[0_0_40px_rgba(104,160,99,0.08)] cursor-pointer"
+          >
             <div className="flex items-center gap-3 justify-center mb-2">
               <div className="w-2 h-2 rounded-full bg-[#68A063] animate-pulse"></div>
-              <span className="text-[#68A063] font-mono text-sm group-hover:text-[#7CB873] transition-colors duration-300">{skills.stats.title1}</span>
+              <span className="text-[#68A063] font-mono text-base sm:text-lg group-hover:text-[#7CB873] transition-colors duration-300 font-semibold">{skills.stats.title1}</span>
             </div>
-            <div className="text-gray-400 text-xs font-light text-center">{skills.stats.subTitle1}</div>
-          </div>
-          <div className="group p-5 bg-black/60 rounded-xl border border-[#68A063]/10 hover:border-[#68A063]/30 transition-all duration-300 hover:bg-black/80 hover:shadow-[0_0_30px_rgba(104,160,99,0.05)]">
+            <div className="text-gray-400 text-sm sm:text-base font-light text-center group-hover:text-gray-300 transition-colors duration-300">Проекты и портфолио →</div>
+          </a>
+
+          <a
+            href={skills.stats.title2Link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-6 sm:p-8 md:p-10 bg-black/60 rounded-xl border border-[#68A063]/10 hover:border-[#68A063]/30 transition-all duration-300 hover:bg-black/80 hover:shadow-[0_0_40px_rgba(104,160,99,0.08)] cursor-pointer"
+          >
             <div className="flex items-center gap-3 justify-center mb-2">
               <div className="w-2 h-2 rounded-full bg-[#7CB873] animate-pulse"></div>
-              <span className="text-[#7CB873] font-mono text-sm group-hover:text-[#68A063] transition-colors duration-300">{skills.stats.title2}</span>
+              <span className="text-[#7CB873] font-mono text-base sm:text-lg group-hover:text-[#68A063] transition-colors duration-300 font-semibold">{skills.stats.title2}</span>
             </div>
-            <div className="text-gray-400 text-xs font-light text-center">{skills.stats.subTitle2}</div>
-          </div>
-          <div className="group p-5 bg-black/60 rounded-xl border border-[#68A063]/10 hover:border-[#68A063]/30 transition-all duration-300 hover:bg-black/80 hover:shadow-[0_0_30px_rgba(104,160,99,0.05)]">
-            <div className="flex items-center gap-3 justify-center mb-2">
-              <div className="w-2 h-2 rounded-full bg-[#68A063] animate-pulse"></div>
-              <span className="text-[#68A063] font-mono text-sm group-hover:text-[#7CB873] transition-colors duration-300">{skills.stats.title3}</span>
-            </div>
-            <div className="text-gray-400 text-xs font-light text-center">{skills.stats.subTitle3}</div>
-          </div>
+            <div className="text-gray-400 text-sm sm:text-base font-light text-center group-hover:text-gray-300 transition-colors duration-300">Образование и ценности →</div>
+          </a>
         </div>
+
       </div>
     </section>
   )

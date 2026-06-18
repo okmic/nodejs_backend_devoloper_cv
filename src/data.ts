@@ -113,7 +113,7 @@ export const siteData = {
     categories: [
       {
         category: "Node.js",
-        level: "Экспертный уровень",
+        level: "Продакшен опыт",
         skills: [
           { name: "Fastify", level: 95 },
           { name: "Express.js", level: 92 },
@@ -153,12 +153,10 @@ export const siteData = {
       }
     ],
     stats: {
-      title1: "Node.js",
-      subTitle1: "Экспертный уровень",
-      title2: "Базы данных",
-      subTitle2: "PostgreSQL, MongoDB, MySQL",
-      title3: "Микросервисы",
-      subTitle3: "Проектирование и разработка",
+      title1: "Проекты",
+      title1Link: "https://okmic.github.io/MicoProjects/",
+      title2: "Обо мне",
+      title2Link: "https://okmic.github.io/MicoEngineer/",
     }
   },
   contacts: {
