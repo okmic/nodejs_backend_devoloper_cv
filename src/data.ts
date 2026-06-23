@@ -13,7 +13,7 @@ export const siteData = {
     { id: 'contact', label: 'Контакты' }
   ],
   hero: {
-    title: "Developer Node.js",
+    title: "Mico Node.js",
     buttonValue: "Написать",
     description: "4+ года коммерческой разработки. Специализируюсь на Node.js: Fastify, Express, NestJS. Проектирую микросервисные архитектуры, работаю с PostgreSQL, MongoDB, Redis.",
     stats: [
